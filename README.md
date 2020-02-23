@@ -9,7 +9,7 @@
 ```bash
 $ apt-get update && apt-get upgrade -y && apt-get install aptitude -y
 $ aptitude install wget curl vim git screen zip -y
-$ screen -S monero
+$ screen -S coinevo
 $ aptitude install build-essential cmake tofrodos libtool-bin autoconf pkg-config -y
 ```
 
@@ -24,11 +24,11 @@ $ unzip android-ndk-r17c-linux-x86_64.zip
 $ mv android-ndk-r17c ndk-r17c
 ```
 
-### Build Monero
+### Build Coinevo
 
 ```bash
 $ cd ~
-$ cd monero-android-lib/external-libs
+$ cd coinevo-android-lib/external-libs
 $ mkdir -p build/src
 $ make all
 ```

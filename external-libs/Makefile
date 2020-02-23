@@ -10,14 +10,14 @@
 
 #build-external-libs: clean-external-libs collect
 
-all: monero
+all: coinevo
 
-monero: toolchain libsodium openssl boost monero_dl openssl_sysroot
-	script/monero-build.sh
+coinevo: toolchain libsodium openssl boost coinevo_dl openssl_sysroot
+	script/coinevo-build.sh
 
-monero_dl:
-	script/monero-fetch.sh
-#	script/monero-patch.sh
+coinevo_dl:
+	script/coinevo-fetch.sh
+#	script/coinevo-patch.sh
 
 toolchain:
 	script/toolchain-build.sh
@@ -51,11 +51,11 @@ clean:
 	script/clean.sh
 
 distclean: clean
-	find monero    -type f -a ! -name ".gitignore" -a ! -name "wallet2_api.h" -exec rm {} \;
+	find coinevo    -type f -a ! -name ".gitignore" -a ! -name "wallet2_api.h" -exec rm {} \;
 	find boost     -type f -a ! -name ".gitignore" -exec rm {} \;
 	find libsodium -type f -a ! -name ".gitignore" -exec rm {} \;
 	find openssl   -type f -a ! -name ".gitignore" -exec rm {} \;
 
-archive: libsodium openssl boost monero
+archive: libsodium openssl boost coinevo
 	echo "Packing external-libs"
-	tar czfv libsodium openssl boost monero external-libs.tgz
+	tar czfv libsodium openssl boost coinevo external-libs.tgz
