@@ -31,16 +31,6 @@ for arch in ${archs[@]}; do
             xarch="armv8-a"
             sixtyfour=ON
             ;;
-        "x86")
-            target_host=i686-linux-android
-            xarch="i686"
-            sixtyfour=OFF
-            ;;
-        "x86_64")
-            target_host=x86_64-linux-android
-            xarch="x86-64"
-            sixtyfour=ON
-            ;;
         *)
             exit 16
             ;;
